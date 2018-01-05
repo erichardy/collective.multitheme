@@ -47,7 +47,7 @@
 
 
   <!-- full-width breadcrumb -->
-  <!--replace css:content="#viewlet-above-content" css:theme="#above-content" /-->
+  <replace css:content="#viewlet-above-content" css:theme="#above-content" />
 
   <!-- Central column -->
   <replace css:theme="#content-container" method="raw">

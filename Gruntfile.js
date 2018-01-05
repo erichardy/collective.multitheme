@@ -22,7 +22,8 @@ module.exports = function (grunt) {
                     }
                 },
                 files: {
-                    'less/theme-compiled.css': 'less/theme.local.less',
+                    // 'less/theme-compiled.css': 'less/theme.local.less',
+                	'less/spot/theme.css': 'less/spot/theme.less', 
                 }
             }
         },
@@ -43,7 +44,8 @@ module.exports = function (grunt) {
             scripts: {
                 files: [
                     'less/*.less',
-                    'barceloneta/less/*.less'
+                    'barceloneta/less/*.less',
+                    'less/spot/*.less'
                 ],
                 tasks: ['less', 'postcss']
             }

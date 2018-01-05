@@ -1,5 +1,6 @@
 div.outer-wrapper {
 	overflow-x:hidden;
+	padding-top: 0px;
 }
 
 .mosaic-grid  #content {
@@ -162,8 +163,19 @@ a:after {
 	border-color: #2d2d2d;
 }
 
-.navbar-inverse .navbar-nav > .active > a {
-	background: lighten(@plone-link-color, 40%);
+.navbar-nav > li > a:hover,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > ul > li > a:hover,
+.plone-navbar-nav li .submenu a:hover {
+	background: darken(@white, 15%);
+}
+.plone-navbar-nav li .submenu a {
+	line-height: 10px;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-nav > .active > a {
+	// background: lighten(@plone-link-color, 0%);
+	background: darken(@white, 3%);
 }
 
 .navbar-inverse .navbar-brand {
@@ -178,3 +190,36 @@ a:after {
 	font-size: 22px;
 	letter-spacing: 1px;
 }
+
+/* Breadcrumbs */
+// @white defined in partials/variables.less
+.plone-breadcrumb {
+    margin-top: 5px;
+    margin-bottom: 0;
+    background-color: darken(@white, 3%);
+    color: darken(@white, 70%);
+
+    ol {
+        font-size: 16px;
+        a {
+            color: darken(@white, 85%);
+            // background-color: darken(@white, 25%);
+        	&:hover {
+        		border-bottom: solid darken(@white, 30%);
+        	}
+        }
+    }
+    ol>li+li{
+	    &:before,
+	    &:after{
+	        content: "\232A";
+	        position: absolute;
+	        padding: 0 5px;
+	        border: 0 !important;
+	        left: -21px;
+	        top: 0px;
+	        color: black;
+	    }
+	}
+}
+
