@@ -1,0 +1,21 @@
+<div class="row" id="maree-trad-header">
+	<div class="col-xs-2 col-sm-2 col-md-2">
+		<a id="portal-logo"
+		   title="Home"
+		   tal:attributes="href view/navigation_root_url;
+		                   title view/navigation_root_title"
+		   i18n:domain="plone"
+		   i18n:attributes="title">
+		    <img src="logo.png" alt=""
+		         tal:attributes="alt view/logo_title;
+		                         title view/logo_title;
+		                         src view/img_src" /></a>
+	</div>
+
+	<div id="header-text" class="col-xs-3 col-sm-3 col-md-10">
+		<span class="title">MARÉE TRAD</span><br />
+		<span class="text">
+		   Comme une marée de musique trad qui monte dans l'espace public !
+		</span>
+	</div>
+</div>
