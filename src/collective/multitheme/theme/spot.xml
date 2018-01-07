@@ -40,6 +40,7 @@
   <replace css:theme="#portal-logo"
       css:content="#portal-logo"
       />
+  <after css:theme="#portal-logo" css:content="#header-text" />
 
   <!-- Portal Navigation -->
   <replace css:theme-children="#portal-globalnav-wrapper" css:content-children="#portal-globalnav-wrapper > .container" method="raw" />
