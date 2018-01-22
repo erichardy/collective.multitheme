@@ -1,15 +1,33 @@
 {
   "//": "Put here only devDependencies, theme dependencies should stay inside of the theme folder.",
-  "name": "collective.multitheme",
+  "name": "collective.abctune",
   "version": "1.0.0",
   "devDependencies": {
     "grunt": "~0.4.4",
     "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-less": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "less-plugin-inline-urls": "^1.1.0",
     "grunt-contrib-watch": "latest",
     "grunt-postcss": "^0.8.0",
     "pixrem": "^3.0.2",
     "cssnano": "^3.7.7",
     "autoprefixer": "^6.5.1"
+  },
+  "dependencies": {
+    "grunt-contrib-requirejs": "^1.0.0",
+    "grunt-sed": "^0.1.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-rename": "latest",
+    "gulp-debug": "latest",
+    "fs": "latest",
+    "gulp-shell": "latest",
+    "gulp-concat": "latest",
+    "gulp-notify": "latest",
+    "node-notifier": "latest",
+    "gulp-cache": "latest",
+    "gulp-uglify": "latest"
   }
 }

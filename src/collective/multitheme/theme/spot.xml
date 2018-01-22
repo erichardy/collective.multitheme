@@ -10,7 +10,6 @@
 
   <after theme-children="/html/head" >
        <link rel="stylesheet" href="++resource++medialog.iconpicker/icon-fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
-       <link rel="stylesheet" href="++theme++multitheme/css/spot.css" />
   </after>
 
   <rules css:if-content="#portal-top">
