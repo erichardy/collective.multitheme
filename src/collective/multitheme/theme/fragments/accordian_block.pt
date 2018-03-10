@@ -3,12 +3,12 @@
   class="accordion-block ${view/data/color1}"
   data-anchor="anchor-${title}"
   title="${title}">
-  <a href="#" class="accordian_title accordion toggle">
+  <a href="#" tal:attributes="href string:#fragment-${view/id}" class="accordian_title accordion toggle">
     <button type="button" class="tcon tcon-menu--xcross" aria-label="toggle menu">
       <span class="tcon-menu__lines" aria-hidden="true"></span>
       <span class="tcon-visuallyhidden">toggle coontent</span>
     </button>
-    <h3>${title}</h3>
+    <h3 tal:content="structure string:${title}">title</h3>
   </a>
  <div class="accordiondiv">
    <tal:block tal:define="value nocall:view/data/text|nothing;
