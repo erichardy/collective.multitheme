@@ -87,7 +87,7 @@ div.outer-wrapper {
 /* OVERALL ASPECT */
 
 body {
-  background-color: #f2f2f2;
+    background-color: #f2f2f2;
     // font-family: "Exo";
     // font-family: 'Cormorant Garamond', serif;
     font-familiy: "Verdana";
@@ -187,6 +187,22 @@ a:after {
 	background: @white;
 	border-top: solid @main-maree-trad-color;
 }
+
+.plone-navbar-nav li .submenu li {
+	position: relative;
+	float: right;
+	background-color: white;
+	&:hover ul {
+		left: 0%;
+		right: 100%;
+	}
+}
+/*
+.plone-navbar-nav li .submenu li:hover ul {
+	left: 0%;
+	right: 200%;
+}
+*/
 
 .navbar-inverse .navbar-brand {
 	color: #999999;
