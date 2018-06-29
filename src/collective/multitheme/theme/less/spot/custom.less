@@ -2,7 +2,11 @@
 @main-maree-trad-color: #FE2F2E;
 
 // ci-dessous pour la couleur des indicateurs de liens...
-@main-concertina-color: #C2CD8D;
+@main-concertina-color: lighten(#58735B, 15%);
+// #58735B #4A604A
+
+@global-background-color: #FDFDFD;
+@over-everything: 100000; // z-index
 
 .mosaic-grid div.outer-wrapper,
 div.outer-wrapper {
@@ -90,7 +94,7 @@ div.outer-wrapper {
 /* OVERALL ASPECT */
 
 body {
-    background-color: #f2f2f2;
+    background-color: @global-background-color;
     // font-family: "Exo";
     // font-family: 'Cormorant Garamond', serif;
     font-familiy: "Verdana";
