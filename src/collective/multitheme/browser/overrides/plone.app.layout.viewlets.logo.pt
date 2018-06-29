@@ -1,4 +1,4 @@
-<div class="row" id="maree-trad-header">
+<div class="row" id="concertina-header">
 	<div class="col-xs-2 col-sm-2 col-md-2">
 		<a id="portal-logo"
 		   title="Home"
@@ -13,9 +13,9 @@
 	</div>
 
 	<div id="header-text" class="col-xs-3 col-sm-3 col-md-10">
-		<span class="title">MARÉE TRAD</span><br />
+		<span class="title">Concertina</span><br />
 		<span class="text">
-		   Comme une marée de musique trad qui monte dans l'espace public !
+		   Tout (ou presque) sur le concertina (en français)
 		</span>
 	</div>
 </div>

@@ -1,6 +1,9 @@
 
 @main-maree-trad-color: #FE2F2E;
 
+// ci-dessous pour la couleur des indicateurs de liens...
+@main-concertina-color: #C2CD8D;
+
 .mosaic-grid div.outer-wrapper,
 div.outer-wrapper {
 	overflow-x:hidden;
@@ -174,7 +177,8 @@ a:after {
 .plone-navbar-nav li .submenu a:hover {
 	// background: darken(@white, 15%);
 	background: @white;
-	border-bottom: solid @main-maree-trad-color;
+	// border-bottom: solid @main-maree-trad-color;
+	border-bottom: solid @main-concertina-color;
 }
 .plone-navbar-nav li .submenu a {
 	line-height: 10px;
@@ -185,7 +189,8 @@ a:after {
 	// background: darken(@white, 3%);
 	// background: lighten(@main-maree-trad-color, 35%);
 	background: @white;
-	border-top: solid @main-maree-trad-color;
+	// border-top: solid @main-maree-trad-color;
+	border-top: solid @main-concertina-color;
 }
 
 .plone-navbar-nav li .submenu li {
@@ -231,7 +236,8 @@ a:after {
             color: darken(@white, 85%);
             // background-color: darken(@white, 25%);
         	&:hover {
-        		border-bottom: solid @main-maree-trad-color;
+        		// border-bottom: solid @main-maree-trad-color;
+        		border-bottom: solid @main-concertina-color;
         	}
         }
     }
@@ -249,7 +255,7 @@ a:after {
 	}
 }
 
-#maree-trad-header {
+#concertina-header {
 	width: 50%;
 	img {
 		min-width: 40px;
@@ -257,7 +263,7 @@ a:after {
 	#header-text {
 		padding-top: 5px;
 		.title {
-			color: red;
+			color: @main-concertina-color;
 			font-size: 25px;
 			font-weight: bold;
 		}
@@ -270,7 +276,7 @@ a:after {
 }
 
 @media (max-width: @plone-screen-md-min) {
-	#maree-trad-header {
+	#concertina-header {
 		width: 20%;
 		#header-text {
 			display: none;

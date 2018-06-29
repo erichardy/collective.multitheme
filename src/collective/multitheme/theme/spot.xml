@@ -37,7 +37,7 @@
 
   <!-- Add logo -->
   <replace css:theme="#portal-logo"
-      css:content="#maree-trad-header"
+      css:content="#concertina-header"
       />
   <!-- after css:theme="#portal-logo" css:content="#header-text" /-->
 
