@@ -49,7 +49,7 @@ setup(
         'medialog.controlpanel',
         'plone.app.mosaic',
         'medialog.iconpicker>=0.6.3.2',
-        'webcouturier.dropdownmenu',
+        'webcouturier.dropdownmenu>=3.0.2',
         'plone.tiles>=2.0.0b3',
         'plone.jsonserializer>=0.9.5',
         'plone.app.blocks>=4.1.1'
