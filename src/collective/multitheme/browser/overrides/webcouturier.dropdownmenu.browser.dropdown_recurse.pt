@@ -27,7 +27,7 @@
                   class_state     string: state-${node/normalized_review_state};
                   class_clickable python:' noClick' if not enable_parent_clickable and children else None;
                   title           node/Title;
-                  nTitle          python:title if len(title)<20 else title[:20]+'...'"
+                  nTitle          python:title if len(title)<30 else title[:30]+'...'"
       class="${class_position}${class_dropdown}${class_selected}">
     <a class="clearfix${class_state}${class_has_dd}${class_clickable}"
        title="${node/Description}"
