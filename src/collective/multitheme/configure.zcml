@@ -32,7 +32,7 @@
       directory="profiles/democontent"
       description="Installs demo content for Multi Theme."
       provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler=".setuphandlers.post_install"
+      post_handler=".setuphandlers.post_install_demo"
       />
 
   <genericsetup:registerProfile

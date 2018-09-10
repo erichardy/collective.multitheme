@@ -25,7 +25,7 @@ def post_install(context):
     if context.readDataFile('multitheme_content.txt') is None:
         return
     portal = api.portal.get()
-    _create_frontpage(portal)
+    # _create_frontpage(portal)
 
 
 def _create_frontpage(portal):
@@ -48,7 +48,7 @@ def _create_frontpage(portal):
     	portal.default_page = "forside"
 
 
-def post_install(context):
+def post_install_demo(context):
     """Post install script"""
     # Do something during the installation of this package
     portal = api.portal.get()
