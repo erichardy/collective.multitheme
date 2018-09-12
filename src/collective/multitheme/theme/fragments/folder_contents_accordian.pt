@@ -15,9 +15,10 @@ TODO : quite the same but with a choice of the portal_types, probably in modal w
   padding: 5px 3px 5px 10px;
   border: 1px solid #AAAAAA;
   background-color: #DDDDDD;
+  border-radius: 3px;
   /* width: 728px; */
 }
-.go-to-tune {
+.go-to-page {
   text-shadow: 3px 2px #DDDDDD;
   font-size: 80%;
   float: right;
@@ -40,6 +41,7 @@ TODO : quite the same but with a choice of the portal_types, probably in modal w
                     contextId context/getId;
                     hidecurrentdocument view/data/hidecurrentdocument"
         class="folder-contents-accordion">
+
   <h3 tal:condition="showtitle"
       tal:attributes="class string:${tooltip};
                       title string:${desc}">
@@ -67,7 +69,7 @@ TODO : quite the same but with a choice of the portal_types, probably in modal w
 		  	          tal:content="structure string:${item/text/output}|nothing">
 		  	      text
 		  	    </span>
-			     <a class="go-to-tune" href=""
+			     <a class="go-to-page" href=""
 		  	         tal:attributes="target string:_blank;
 		  	                         href string:${item_url}?_authenticator=${token}"
 		  	         i18n:translate=""
@@ -101,10 +103,6 @@ TODO : quite the same but with a choice of the portal_types, probably in modal w
 		});
       });
   </script>
-
-
-    <tal:define tal:define="load_css python:context.portal_registry['collective.multitheme.interfaces.ICollectiveMultiThemeSettings.load_css'] or '';">
-      <link rel="stylesheet" href="++theme++multitheme/css/folder_contentload.css" tal:condition="load_css">
-    </tal:define>
   </tal:conditon>
+
 </section>
