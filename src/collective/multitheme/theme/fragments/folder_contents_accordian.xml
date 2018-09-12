@@ -1,0 +1,27 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
+  xmlns:lingua="http://namespaces.plone.org/supermodel/lingua"
+  xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+  xmlns:security="http://namespaces.plone.org/supermodel/security"
+  xmlns:users="http://namespaces.plone.org/supermodel/users"
+  xmlns="http://namespaces.plone.org/supermodel/schema">
+<schema>
+  <field name="showtitle" type="zope.schema.Bool">
+        <description/>
+        <title>Show object title</title>
+        <default>True</default>
+  </field>
+  <field name="showdescription" type="zope.schema.Bool">
+        <description/>
+        <title>Show object description in tooltip</title>
+        <default>True</default>
+  </field>
+  <field name="hidecurrentdocument" type="zope.schema.Bool">
+        <description/>
+        <title>Hide current document (if fragment of a document)</title>
+        <default>True</default>
+  </field>
+
+</schema>
+</model>

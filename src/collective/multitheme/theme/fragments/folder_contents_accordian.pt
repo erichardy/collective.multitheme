@@ -1,22 +1,110 @@
 <span tal:replace="nothing">
 Comment :
-This is a fragment to pages (portal_type : Document) of a folder as an accordion view.
+This is a fragment to diplay the pages (portal_type : Document) of a folder as an accordion view.
 The title is uses as the collapse/uncollapse anchor
 The description for a tooltip
 the richtext as the content
 
 TODO : quite the same but with a choice of the portal_types, probably in modal wiews
 </span>
+<style>
+.accordeon-title {
+  color: #555555;
+  cursor: -webkit-grab;
+  cursor: pointer;
+  padding: 5px 3px 5px 10px;
+  border: 1px solid #AAAAAA;
+  background-color: #DDDDDD;
+  /* width: 728px; */
+}
+.go-to-tune {
+  text-shadow: 3px 2px #DDDDDD;
+  font-size: 80%;
+  float: right;
+}
+.tooltip-inner {
+  color: #030303 !important;
+  background-color: #EEEEEE !important;
+  max-width: 500px !important;
+}
+</style>
+
+
 <section id="fragment-${view/id}"
-        tal:define="items view/getDocuments">
-  <tal:conditon tal:condition="items">
+        tal:define="results view/getDocuments;
+                    token context/@@authenticator/token;
+                    showtitle view/data/showtitle;
+                    showdescription view/data/showdescription;
+                    tooltip python:'pat-tooltip' if showdescription else '';
+                    desc python:context.description if showdescription else '';
+                    contextId context/getId;
+                    hidecurrentdocument view/data/hidecurrentdocument"
+        class="folder-contents-accordion">
+  <h3 tal:condition="showtitle"
+      tal:attributes="class string:${tooltip};
+                      title string:${desc}">
+        ${context/title}
+  </h3>
+   
+  <tal:conditon tal:condition="results">
   
-  <span tal:repeat="item items">
-    <p>${item/title}</p>
-    <span tal:content="structure string:${item/text/output}">text</span>
-  </span>
-       <tal:define tal:define="load_css python:context.portal_registry['collective.multitheme.interfaces.ICollectiveMultiThemeSettings.load_css'] or '';">
-           <link rel="stylesheet" href="++theme++multitheme/css/folder_contentload.css" tal:condition="load_css">
-       </tal:define>
-	</tal:conditon>
+    	<span tal:repeat="item results">
+    	  <span tal:condition="python:not (hidecurrentdocument and (item.getId() == contextId))"
+    	        tal:define="itemClass string:${item/id}-${repeat/item/number};
+    	                    tooltip item/description | nothing;
+    	                    item_url item/absolute_url"
+    	        
+    	                    >
+		  	<p
+		  	   data-toggle="tooltip"
+		  	   tal:attributes="class string:accordeon-title pat-tooltip;
+		  	                   id string:${itemClass};
+		  	                   title string:${tooltip}">
+		  	   ${item/title}
+		  	</p>
+		  	  <span tal:attributes="class string:${itemClass} accordeon-content">
+		  	    <span tal:condition="python:item.text"
+		  	          tal:content="structure string:${item/text/output}|nothing">
+		  	      text
+		  	    </span>
+			     <a class="go-to-tune" href=""
+		  	         tal:attributes="target string:_blank;
+		  	                         href string:${item_url}?_authenticator=${token}"
+		  	         i18n:translate=""
+		  	      >Go to page</a>
+			  
+			</span>  
+		  </span>
+	    </span>
+
+  <script>
+    require([
+      'jquery',
+      ], function(Base) {
+        
+    	var accordion_head = $('.accordeon-title');
+		var accordion_body = $('.accordeon-content');
+
+		$(accordion_body).each(function(){$(this).hide()});
+
+		// Lorsqu'on clique sur un titre
+		accordion_head.on('click', function(event) {
+			event.preventDefault();
+			title = $(this).attr('id');
+			toShow = 'span.' + title;
+			if ($(toShow).css("display") != "none") {
+				$(toShow).hide(500, "swing");
+			} else {
+				$(accordion_body).each(function(){$(this).hide(500, "swing")});
+			    $(toShow).show(500, "swing");
+			}
+		});
+      });
+  </script>
+
+
+    <tal:define tal:define="load_css python:context.portal_registry['collective.multitheme.interfaces.ICollectiveMultiThemeSettings.load_css'] or '';">
+      <link rel="stylesheet" href="++theme++multitheme/css/folder_contentload.css" tal:condition="load_css">
+    </tal:define>
+  </tal:conditon>
 </section>
