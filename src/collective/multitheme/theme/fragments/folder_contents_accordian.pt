@@ -53,7 +53,7 @@ TODO : quite the same but with a choice of the portal_types, probably in modal w
     	<span tal:repeat="item results">
     	  <span tal:condition="python:not (hidecurrentdocument and (item.getId() == contextId))"
     	        tal:define="itemClass string:${item/id}-${repeat/item/number};
-    	                    tooltip item/description | nothing;
+    	                    tooltip item/description|nothing;
     	                    item_url item/absolute_url"
     	        
     	                    >
