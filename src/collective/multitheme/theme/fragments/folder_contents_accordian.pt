@@ -66,7 +66,7 @@ TODO : quite the same but with a choice of the portal_types, probably in modal w
 		  	</p>
 		  	  <span tal:attributes="class string:${itemClass} accordeon-content">
 		  	    <span tal:condition="python:item.text"
-		  	          tal:content="structure string:${item/text/output}|nothing">
+		  	          tal:content="structure string:${item/text/output}">
 		  	      text
 		  	    </span>
 			     <a class="go-to-page" href=""
