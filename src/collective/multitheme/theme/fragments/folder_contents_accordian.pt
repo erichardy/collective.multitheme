@@ -1,0 +1,22 @@
+<span tal:replace="nothing">
+Comment :
+This is a fragment to pages (portal_type : Document) of a folder as an accordion view.
+The title is uses as the collapse/uncollapse anchor
+The description for a tooltip
+the richtext as the content
+
+TODO : quite the same but with a choice of the portal_types, probably in modal wiews
+</span>
+<section id="fragment-${view/id}"
+        tal:define="items view/getDocuments">
+  <tal:conditon tal:condition="items">
+  
+  <span tal:repeat="item items">
+    <p>${item/title}</p>
+    <span tal:content="structure string:${item/text/output}">text</span>
+  </span>
+       <tal:define tal:define="load_css python:context.portal_registry['collective.multitheme.interfaces.ICollectiveMultiThemeSettings.load_css'] or '';">
+           <link rel="stylesheet" href="++theme++multitheme/css/folder_contentload.css" tal:condition="load_css">
+       </tal:define>
+	</tal:conditon>
+</section>
