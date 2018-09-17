@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implementer
+import logging
 
+
+logger = logging.getLogger('collective.multitheme:setuphandler')
 
 @implementer(INonInstallable)
 class HiddenProfiles(object):
@@ -22,8 +25,8 @@ from plone.app.textfield.value import RichTextValue
 def post_install(context):
     """enable script"""
     # Add content
-    if context.readDataFile('multitheme_content.txt') is None:
-        return
+    # if context.readDataFile('multitheme_content.txt') is None:
+    #     return
     portal = api.portal.get()
     # _create_frontpage(portal)
 
@@ -52,7 +55,7 @@ def post_install_demo(context):
     """Post install script"""
     # Do something during the installation of this package
     portal = api.portal.get()
-    _create_content(portal)
+    # _create_content(portal)
 
 
 def _create_content(portal):
