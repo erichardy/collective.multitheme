@@ -106,7 +106,8 @@
 		  	          tal:content="structure string:${item/text/output}">
 		  	      text
 		  	    </span>
-			     <a class="go-to-page" href=""
+			     <a tal:condition="python:view.canEdit(item)"
+			         class="go-to-page" href=""
 		  	         tal:attributes="target string:_blank;
 		  	                         href string:${item_url}?_authenticator=${token}"
 		  	         i18n:translate=""
