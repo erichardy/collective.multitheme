@@ -1,12 +1,16 @@
-<span tal:replace="nothing">
-Comment :
-This is a fragment to diplay the pages (portal_type : Document) of a folder as an accordion view.
-The title is uses as the collapse/uncollapse anchor
-The description for a tooltip
-the richtext as the content
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="collective.multitheme">
 
-TODO : quite the same but with a choice of the portal_types, probably in modal wiews
-</span>
+<body>
+
+<div metal:fill-slot="content-core">
+<metal:block define-macro="content-core">
+
 <style>
 .accordeon-title {
   color: #555555;
@@ -23,46 +27,40 @@ TODO : quite the same but with a choice of the portal_types, probably in modal w
   font-size: 80%;
   float: right;
 }
+
 .tooltip-inner {
   color: #030303 !important;
-  background-color: transparent !important;
-  max-width: 500px !important;
+  font-family: "Roboto";
+  background-color: #FAFAFA !important;
+  /* max-width: 500px !important; */
 }
+
 </style>
 
 
-<section id="fragment-${view/id}"
+<div 
         tal:define="results view/getDocuments;
-                    
                     token context/@@authenticator/token;
-                    showtitle view/data/showtitle;
-                    showdescription view/data/showdescription;
-                    tooltip python:'pat-tooltip' if showdescription else '';
-                    desc python:context.description if showdescription else '';
-                    contextId context/getId;
-                    hidecurrentdocument view/data/hidecurrentdocument"
+                    desc python:context.description;
+                    contextId context/getId;"
         class="folder-contents-accordion">
 
-  <h3 tal:condition="showtitle"
-      tal:attributes="class string:${tooltip};
-                      title string:${desc}">
+  <h3>
         ${context/title}
   </h3>
    
   <tal:conditon tal:condition="results">
   
     	<span tal:repeat="item results">
-    	  <span tal:condition="python:not (hidecurrentdocument and (item.getId() == contextId))"
-    	        tal:define="itemClass string:${item/id}-${repeat/item/number};
-    	                    tooltip item/description|nothing;
+    	  <span tal:define="itemClass string:${item/id}-${repeat/item/number};
+    	                    desc python:item.description if item.description else ' ';
     	                    item_url item/absolute_url"
-    	        
     	                    >
 		  	<p
-		  	   data-toggle="tooltip"
-		  	   tal:attributes="class string:accordeon-title pat-tooltip;
+		  	   data-toggl="mytooltip"
+		  	   tal:attributes="class string:accordeon-title;
 		  	                   id string:${itemClass};
-		  	                   title string:${tooltip}">
+		  	                   title string:${desc}">
 		  	   ${item/title}
 		  	</p>
 		  	  <span tal:attributes="class string:${itemClass} accordeon-content">
@@ -84,7 +82,9 @@ TODO : quite the same but with a choice of the portal_types, probably in modal w
     require([
       'jquery',
       ], function(Base) {
-        
+    	// template = '<span class="tooltip" role="tooltip"><span class="arrow"></span><span class="tooltip-inner"></span></span>'
+    	$('[data-toggl="mytooltip"]').tooltip({html: true, placement: "top"});
+    	
     	var accordion_head = $('.accordeon-title');
 		var accordion_body = $('.accordeon-content');
 
@@ -105,5 +105,9 @@ TODO : quite the same but with a choice of the portal_types, probably in modal w
       });
   </script>
   </tal:conditon>
+</div>
 
-</section>
+</metal:block>
+</div>
+</body>
+</html>

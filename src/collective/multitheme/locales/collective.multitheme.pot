@@ -1,0 +1,87 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2018-09-28 10:14+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.multitheme\n"
+
+#: ../misc_views/folder_contents_accordian.pt:71
+msgid "Go to page"
+msgstr ""
+
+#: ../configure.zcml:37
+msgid "Installs demo content for Multi Theme."
+msgstr ""
+
+#: ../configure.zcml:28
+msgid "Installs the Multi Theme package (collective.multitheme)."
+msgstr ""
+
+#: ../interfaces.py:52
+msgid "Layout Rules"
+msgstr ""
+
+#: ../interfaces.py:63
+msgid "Load CSS? Put it in your theme and disable it here"
+msgstr ""
+
+#: ../interfaces.py:58
+msgid "Mosaic Full width?"
+msgstr ""
+
+#: ../configure.zcml:28
+#: ../interfaces.py:27
+msgid "Multitheme"
+msgstr ""
+
+#: ../configure.zcml:37
+msgid "Multitheme Demo Content"
+msgstr ""
+
+#: ../interfaces.py:39
+msgid "Style"
+msgstr ""
+
+#: ../configure.zcml:46
+msgid "Uninstall: Multitheme"
+msgstr ""
+
+#: ../configure.zcml:46
+msgid "Uninstalls the Plone theme package collective.multitheme."
+msgstr ""
+
+#: ../misc_views/folder_contents_accordian.py:9
+msgid "accrodian view"
+msgstr ""
+
+#. Default: "Custom Color 1"
+#: ../interfaces.py:69
+msgid "color1"
+msgstr ""
+
+#. Default: "Custom Color 2"
+#: ../interfaces.py:76
+msgid "color2"
+msgstr ""
+
+#. Default: "Custom Color 3"
+#: ../interfaces.py:83
+msgid "color3"
+msgstr ""
+
+#. Default: "Choose Color"
+#: ../interfaces.py:71
+msgid "help_color"
+msgstr ""

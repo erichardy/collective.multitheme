@@ -46,6 +46,7 @@ setup(
         'plone.app.theming',
         'plone.app.themingplugins',
         'collective.themefragments',
+        'plone.i18n',
         'medialog.controlpanel',
         'plone.app.mosaic',
         'medialog.iconpicker>=0.6.3.2',
