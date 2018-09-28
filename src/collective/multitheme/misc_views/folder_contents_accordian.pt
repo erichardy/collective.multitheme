@@ -35,6 +35,45 @@
   /* max-width: 500px !important; */
 }
 
+.xtooltip {
+    position: relative;
+    /* display: inline-block; */
+    /* border-bottom: 1px dotted black; */
+}
+
+.xtooltip .xtooltiptext {
+    visibility: hidden;
+    min-width: 400px;
+    max-width: 700px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 5%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.xtooltip .xtooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 5%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.xtooltip:hover .xtooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
 </style>
 
 
@@ -56,12 +95,11 @@
     	                    desc python:item.description if item.description else ' ';
     	                    item_url item/absolute_url"
     	                    >
-		  	<p
-		  	   data-toggl="mytooltip"
-		  	   tal:attributes="class string:accordeon-title;
-		  	                   id string:${itemClass};
-		  	                   title string:${desc}">
-		  	   ${item/title}
+		  	<p class="xtooltip accordeon-title"
+		  	   tal:attributes="id string:${itemClass};">${item/title}
+		  	  <span class="xtooltiptext"
+		  	        tal:condition="python:len(desc) > 2"
+		  	        tal:content="string:${desc}">
 		  	</p>
 		  	  <span tal:attributes="class string:${itemClass} accordeon-content">
 		  	    <span tal:condition="python:item.text"
