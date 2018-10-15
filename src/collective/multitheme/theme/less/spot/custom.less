@@ -134,6 +134,9 @@ table {
 	tbody, tr, td, th {
 		border: none;
 	}
+	td {
+		padding: 0px 3px 0px 3px;
+	}
 }
 
 .centered {
@@ -298,6 +301,47 @@ a:after {
 		}
 	}
 }
+
+.xtooltip {
+    position: relative;
+    /* display: inline-block; */
+    /* border-bottom: 1px dotted black; */
+}
+
+.xtooltip .xtooltiptext {
+    visibility: hidden;
+    min-width: 400px;
+    max-width: 700px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 5%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.xtooltip .xtooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 5%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.xtooltip:hover .xtooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
 
 @media (max-width: @plone-screen-md-min) {
 	#concertina-header {
