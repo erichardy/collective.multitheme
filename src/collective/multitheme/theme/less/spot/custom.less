@@ -139,6 +139,20 @@ table {
 	}
 }
 
+.mce-content-body .noborder {
+	border-width: 1px;
+	border-color: red !important;
+	border: 1px dotted red;
+	tbody, tr, td, th {
+		border-width: 1px;
+		border-color: red !important;
+		border: 1px dotted red;
+	}
+	td {
+		padding: 0px 3px 0px 3px;
+	}
+}
+
 .centered {
     text-align: center;
 }
@@ -302,12 +316,14 @@ a:after {
 	}
 }
 
-.xtooltip {
+.xtooltip,
+.mbulle {
     position: relative;
     /* display: inline-block; */
     /* border-bottom: 1px dotted black; */
 }
 
+/* xtooltip for use in folder/collections views */
 .xtooltip .xtooltiptext {
     visibility: hidden;
     min-width: 400px;
@@ -342,7 +358,82 @@ a:after {
     opacity: 1;
 }
 
+/* mbulle used in normal page */
+.mbulle {
+	text-decoration-line: underline;
+    text-decoration-style: double;
+    cursor: -webkit-grab;
+    cursor: pointer;
+}
+@mbulle-color: white;
+@mbulle-bg-color: #7c9a80 ;
+.mbulle .mbulletext {
+    visibility: hidden;
+    min-width: 250px;
+    max-width: 700px;
+    /* background-color: #555; */
+    background-color: @mbulle-bg-color ;
+    color: @mbulle-color;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 80%;
+    left: 5%;
+    margin-left: 0px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
 
+.mbulle .mbulletext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 5%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: @mbulle-bg-color transparent transparent transparent;
+}
+
+.mbulle:hover .mbulletext {
+    visibility: visible;
+    opacity: 1;
+    z-index: 10000;
+}
+
+.mce-content-body .mbulle {
+	text-decoration-line: underline;
+    text-decoration-style: solid;
+    background-color: lighten(@mbulle-bg-color, 30%);
+    color: black;
+	.mbulletext {
+		visibility: visible;
+		position: relative;
+		min-width: initial;
+	    max-width: initial;
+	    background-color: transparent ;
+	    color: @mbulle-bg-color;
+	    text-decoration-style: double;
+	    text-align: initial;
+	    border-radius: 6px;
+	    padding: 5px 0;
+	    z-index: 1;
+	    bottom: initial;
+	    left: initial;
+	    margin-left: 0initial;
+	    opacity: 1;
+	    transition: none;
+	    border: noborder;
+		&:after {
+			position: relative;
+			border: noborder;
+		}
+	}
+}
+
+/* ------------- */
 @media (max-width: @plone-screen-md-min) {
 	#concertina-header {
 		width: 20%;
