@@ -414,8 +414,9 @@ a:after {
 .mce-content-body .mbulle {
 	text-decoration-line: underline;
     text-decoration-style: solid;
-    background-color: lighten(@mbulle-bg-color, 30%);
-    color: black;
+    /* background-color: lighten(@mbulle-bg-color, 30%); */
+    color: blue;
+    cursor: auto;
 	.mbulletext {
 		visibility: visible;
 		position: relative;
@@ -423,7 +424,9 @@ a:after {
 	    max-width: initial;
 	    background-color: transparent ;
 	    color: @mbulle-bg-color;
-	    text-decoration-style: double;
+	    font-size: 90%;
+	    text-decoration-style: initial;
+	    text-decoration-style: dotted;
 	    text-align: initial;
 	    border-radius: 6px;
 	    padding: 5px 0;
@@ -431,7 +434,7 @@ a:after {
 	    bottom: initial;
 	    left: initial;
 	    margin-left: 0initial;
-	    opacity: 1;
+	    opacity: 0.8;
 	    transition: none;
 	    border: noborder;
 		&:after {
