@@ -113,6 +113,36 @@ p {
     line-height: 28px;
     margin-bottom: 25px;
 }
+table {
+    background-color: transparent;
+    color: inherit;
+}
+
+.noborder {
+    border-width: 0px;
+    border-color: transparent !important;
+    border: none;
+    tbody, tr, td, th {
+        border: none;
+    }
+    td {
+        padding: 0px 3px 0px 3px;
+    }
+}
+
+.mce-content-body .noborder {
+    border-width: 1px;
+    border-color: red !important;
+    border: 1px dotted red;
+    tbody, tr, td, th {
+        border-width: 1px;
+        border-color: red !important;
+        border: 1px dotted red;
+    }
+    td {
+        padding: 0px 3px 0px 3px;
+    }
+}
 
 .centered {
     text-align: center;
